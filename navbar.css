@@ -180,8 +180,85 @@ color:#dd0032;
     grid-template-columns: repeat(6,1fr);
     width:85%;
     margin:auto;
-    gap:10px;
+    gap:20px;
 }
 #onSale>div>img{
     width:100%;
+}
+#onSale>div>img+h4+h4+p+h4+p{
+    color: grey;
+    margin-top: 0px;
+    font-size: smaller;
+}
+#onSale>div>img+h4+h4+p+h4{
+    margin-top: -10px;
+}
+#favBrands{
+    display: grid;
+    grid-template-columns: repeat(6,1fr);
+    width:85%;
+    gap:20px;
+    margin: auto;
+}
+#favBrands>div>img{
+    width: 170px;
+    height: 80px;
+}
+#newsBlock{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(2,1fr);
+    width:85%;
+    margin:auto;
+    gap:20px;
+}
+#newsBlock>div>img{
+    width:100%;
+}
+#sephoraDiaries{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    width:85%;
+    margin:auto;
+    gap:20px;
+    margin-bottom: 80px;
+}
+#sephoraDiaries>div>img{
+    width:100%;
+}
+#sephoraDiaries>div>img+p{
+  text-align: left;
+  font-size: x-large;
+}
+#sephoraDiaries>div>img+p+p{
+    margin-top: -20px;
+    text-align: left;
+}
+#subscribe{
+    width:100%;
+    margin:auto;
+    background-color: #f2f2f2;
+}
+h3{
+    padding-top: 30px;
+    text-align: center;
+    font-size: x-large;
+    font-family: Arial, Helvetica, sans-serif;
+}
+#subscribe>div{
+    display: flex;
+    width:50%;
+    margin:auto
+}
+#subscribe>div>input{
+    width:400px;
+    height: 50px;
+    font-size: larger;
+    border: none;
+}
+#subscribe>div>button{
+    background-color: black;
+    color: white;
+    width: 125px;
+    font-size: large;;
 }
