@@ -39,6 +39,10 @@ p{
     width:200px;
     margin-top: 50px;
 }
+#main-heading>div:hover{
+    cursor: pointer;
+    color: #ff4da6;
+}
 .hsym{
     width:20px;
 }
@@ -54,7 +58,7 @@ h1{
     position: relative;
     width:720%;
     margin-left:-45px;
-    animation: 20s slider infinite;
+    animation: 10s slider infinite;
     margin-top: 100px;
 }
 #slider figure img {
@@ -238,6 +242,7 @@ color:#dd0032;
     width:100%;
     margin:auto;
     background-color: #f2f2f2;
+    margin-bottom: 50px;
 }
 h3{
     padding-top: 30px;
@@ -260,5 +265,40 @@ h3{
     background-color: black;
     color: white;
     width: 125px;
-    font-size: large;;
+    font-size: large;
 }
+#subscribe>div>button:hover{
+    cursor: pointer;
+}
+.greyFontBold{
+    color: rgb(66, 64, 64);
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 300;
+}
+.greyFont{
+    color: grey;
+}
+#FAQ{
+    display: flex;
+    margin: auto;
+    justify-content: space-between;
+    width:50%;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+#SocialMedia{
+    width:30%;
+    display: flex;
+    margin:auto;
+    justify-content: space-evenly;
+    margin-bottom: 40px;
+}
+#SocialMedia>img{
+    width:30px;
+    height:30px;
+}
+#SocialMedia>img:hover{
+    cursor: pointer;;
+}
+h4{
+    margin-top: 40PX;}

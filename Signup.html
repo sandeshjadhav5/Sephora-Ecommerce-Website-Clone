@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup Page</title>
+    <style>
+        div{
+            width:300px;
+            box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+            padding:50px 30px 50px 50px;
+            margin: auto;
+        }
+        h1{
+            color: #ff3399;
+            text-align: center;
+        }
+        input{
+            height: 20px;
+            margin-bottom:30px;
+            width: 80%;
+        }
+        button{
+            width:85%;
+            height:40px;
+            background-color: #ff3399;
+            color: white;
+            border: none;
+        }
+        button:hover{
+            font-size: larger;
+            cursor: pointer;;
+            background-color: #b32f71;
+        }
+    </style>
+</head>
+<body>
+    <h1>Sign Up </h1>
+    <div id="signUp">
+        <form>
+            <label>Enter Your Name</label><br>
+            <input placeholder="Enter Your Name"/><br>
+            <label>Enter Your Email</label><br>
+            <input type="email" placeholder="Enter Your Email"/><br>
+            <label>Create Password</label><br>
+            <input placeholder="Enter password"><br>
+            <p>By proceeding, you agree to Privacy Policy, Terms & Conditions</p>
+            <button>Create Account</button>
+        </form>
+    </div>
+</body>
+</html>
+<script>
+    document.querySelector("form").addEventListener("submit",submitData);
+    function submitData(){
+        
+    }
+</script>
