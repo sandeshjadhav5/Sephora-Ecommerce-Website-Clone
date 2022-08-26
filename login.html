@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        body{
+            background-color: whitesmoke;
+        }
+        h1{
+            text-align: center;
+            padding: 30px;
+        }
+        #container{
+            width:400px;
+            margin:auto;
+            margin-top: 50px;
+            background-color: white;
+            padding-bottom: 10px;
+            box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+        }
+        input{
+            width:80%;
+            height:45px;
+            margin-bottom: 40px;
+            margin-left: 35px;
+        }
+        button{
+            width:333px;
+            height:50px;
+           margin-left:30px;
+           margin-bottom: 20px;
+           border: none;
+           color: white;
+           font-size: larger;
+           background-color: #4284f4;
+        }
+        button+button{
+            background-color: #3b5998;
+        }
+        p{
+            margin-bottom:30px;
+            text-align: center;
+        }
+        label{
+            margin: 33px;
+        }
+        #continue{
+            background-color: #ff3399;
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: large;
+            border: none;
+            border-radius: 2.5px;
+        }
+        #continue:hover{
+            background-color: #a31f61;
+            cursor: pointer;
+        }
+        p+p{
+            color: #ff3399;
+            margin-top: -20px;
+        }
+        p+p:hover{
+            cursor: pointer;
+        }
+        #gotoSignUp{
+            width: 200px;
+            height:20px;
+            color:#ff3399;
+            background-color: white;
+            font-size: medium;
+            margin-left: 100px;
+        }
+        #gotoSignUp:hover{
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <form>
+            <h1>LOGIN</h1>
+            <label>Enter Your Phone/Email</label>
+            <input id="ipEmailPhone">
+            <button id="continue">CONTINUE</button>
+            <p>OR</p>
+            <button>Continue with Google</button>
+            <button>Continue with Facebook</button>
+        </form>
+        <p>Dont have an account ? </p>
+        <button id="gotoSignUp">Click here to Sign Up</button>
+    </div>
+</body>
+</html>
+<script>
+    document.querySelector("form").addEventListener("submit",goToHome);
+    let enteredEmail=JSON.parse(localStorage.getItem("signUpDetails"))
+
+    console.log(enteredEmail)
+    function goToHome(event){
+        event.preventDefault(event);
+        let emailId=document.querySelector("#ipEmailPhone").value;
+        // console.log(emailID)
+        if(emailId==enteredEmail.email){
+            window.location.href="Homepage.html"
+        } else {
+            alert("Wrong Credentials")
+        } 
+    }
+
+    document.querySelector("#gotoSignUp").addEventListener("click",gotoSignUp);
+    function gotoSignUp(){
+        window.location.href="Signup.html"
+    }
+</script>

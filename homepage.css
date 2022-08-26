@@ -302,3 +302,22 @@ h3{
 }
 h4{
     margin-top: 40PX;}
+.goTop{
+    width:50px;
+    height:50px;
+}
+#gotoTop{
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    font-size: larger;
+    margin: auto;
+    background-color: #abc72c;
+    border: none;
+    padding-right: 20px;
+    margin-bottom: -25px;
+}
+#gotoTop:hover{
+background-color: #c0e61a;
+cursor: pointer;
+}

@@ -1,5 +1,20 @@
 document.querySelector("#loginPage").addEventListener("click",openLoginPage);
 
-function openLoginPage(){
-    window.location.href="http://127.0.0.1:5500/Sephora%20Clone/login.html?"
-}
+let customerData=JSON.parse(localStorage.getItem("signUpDetails"));
+
+let customerName=customerData.name;
+    console.log(customerName);
+    let customer=document.querySelector("#loginPage").innerText;
+    console.log(customer)
+    customer=customerName
+        
+    function openLoginPage(){
+        window.location.href="login.html"
+    }
+
+    
+
+
+
+
+

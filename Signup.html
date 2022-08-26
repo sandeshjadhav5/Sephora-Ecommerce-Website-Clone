@@ -40,11 +40,11 @@
     <div id="signUp">
         <form>
             <label>Enter Your Name</label><br>
-            <input placeholder="Enter Your Name"/><br>
+            <input id="name" placeholder="Enter Your Name" required/><br>
             <label>Enter Your Email</label><br>
-            <input type="email" placeholder="Enter Your Email"/><br>
+            <input id="email" type="email" placeholder="Enter Your Email" required/><br>
             <label>Create Password</label><br>
-            <input placeholder="Enter password"><br>
+            <input id="password" placeholder="Enter password" required><br>
             <p>By proceeding, you agree to Privacy Policy, Terms & Conditions</p>
             <button>Create Account</button>
         </form>
@@ -53,7 +53,23 @@
 </html>
 <script>
     document.querySelector("form").addEventListener("submit",submitData);
+    //let arr=JSON.parse(localStorage.getItem("details")) || [];
     function submitData(){
+        event.preventDefault();
+        let name=document.querySelector("#name").value;
+        let email=document.querySelector("#email").value;
+        let password=document.querySelector("#password").value;
         
+        let signUp={
+            name,
+            email,
+            password
+        }
+        localStorage.setItem("signUpDetails",JSON.stringify(signUp));
+
+        alert("Account Created Successfully")
+        window.location.href="login.html"
     }
+
+        
 </script>
