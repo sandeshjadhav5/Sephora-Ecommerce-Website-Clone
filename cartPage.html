@@ -4,9 +4,92 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cart</title>
+    <title>My Bag</title>
+    <link rel="stylesheet" href="cartPage.css" />
 </head>
 <body>
-    
+    <div id="top">
+        <P>S E P H O R A</P>
+        <p>Sandesh</p>
+    </div>
+    <div id="myBag"><h2>MY BAG (<span id="bagCount">0</span>)</h2></div>
+    <div id="productsAndGateway">
+        <div id="cartList">
+            <div id="productData">
+            </div>
+        </div>
+        <div id="payMent">
+            <div id="promoCode">
+                <img src="https://static.nnnow.com/client/assets/images/promotions/icon_promo.png"/>
+                <p>APPLY PROMO CODE</p>
+            </div>
+            <h3>OVERVIEW</h3>
+            <div id="financial">
+                
+                <p>Subtotal</p>
+                <span id="totalCartAmount">Rs.0</span>
+                <p>Discount</p>
+                <p>Rs.0</p>
+                <p>GST</p>
+                <P>Rs.0</P>
+                <p>Delievery Charges</p>
+                <p>Rs.0</p>
+            </div>
+            <hr>
+            <div id="totalCartValue"> <h4>Total</h4>
+                <span id="totalSpanRs">Rs.0</span>
+            </div>
+            <button>CHECKOUT</button>
+            <button>SHOP MORE</button>
+            <img src="https://static.nnnow.com/mybag_offer_banner.jpg"/>
+        </div>
+    </div>
 </body>
 </html>
+<script>
+    let product=JSON.parse(localStorage.getItem("productDetails")) || [];
+    let bagCount=0;
+    let subTotalCart=0;
+
+    
+    product.map(function(elem,i){
+
+        bagCount++;
+        subTotalCart+=Number(elem.price);
+        document.querySelector("#totalCartAmount").innerText=subTotalCart
+         document.querySelector("#bagCount").innerText=bagCount;
+         document.querySelector("#totalSpanRs").innerText=subTotalCart;
+        let pDiv=document.createElement("div");
+
+
+        let pImg=document.createElement("img");
+         pImg.setAttribute("src",elem.image_url)
+
+        let pName=document.createElement("h5");
+         pName.innerText=elem.name;
+
+         let pPrice=document.createElement("h4");
+         pPrice.innerText="Rs"+" "+elem.price;
+
+         let pRemove=document.createElement("p");
+         pRemove.innerText="Remove";
+         pRemove.addEventListener("click",function(){
+            event.target.parentNode.remove();
+
+            product.splice(i,1);
+            console.log(product);
+            localStorage.setItem("productDetails",JSON.stringify(product))
+            bagCount--;
+            document.querySelector("#bagCount").innerText=bagCount;
+            subTotalCart= subTotalCart-Number(elem.price);
+        document.querySelector("#totalCartAmount").innerText=subTotalCart
+        document.querySelector("#totalSpanRs").innerText=subTotalCart;
+         })
+
+     
+         pDiv.append(pImg,pName,pPrice,pRemove);
+         document.querySelector("#productData").append(pDiv)
+        
+    })
+    
+</script>

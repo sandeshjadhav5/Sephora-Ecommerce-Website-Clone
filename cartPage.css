@@ -1,0 +1,124 @@
+#top{
+    display: flex;
+    justify-content: space-between;
+    margin: -10px 10px 10px 10px;
+    font-size:x-large;
+}
+#top>p+p{
+    font-size: large;
+    padding-top: 5px;
+}
+#myBag{
+    background-color: #0092df;
+    height:45px;
+    margin: -20px -10px 0px -10px;
+    display: flex;
+    align-items: center;
+}
+#myBag>h2{
+    color: white;
+    padding-left: 25px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+#cartList{
+    width:65%;
+}
+#payMent{
+    width:35%;
+}
+#productsAndGateway{
+    display: flex;
+}
+#promoCode>p{
+    font-size: larger;
+    margin-left:-100px ;
+
+}
+#promoCode>img{width:30px;margin-right: -70px;}
+#promoCode{
+    display: flex;
+    align-items: center;
+    justify-content:space-around;
+    background-color: #f2f2f2;
+    margin: 20px;
+}
+#financial{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    padding: 0px 0px 0px 30px;
+    background-color: #f2f2f2;
+    margin:20px 30px 0px 30px;
+}
+span{
+    margin-top: 20px;
+}
+h3{
+    padding: 30px;
+    margin-bottom: -40px;
+}
+#totalCartValue{
+    display: flex;
+    justify-content: space-between;
+    font-size: larger;
+    padding:0px 0px 0px 10px;
+    background-color: #f2f2f2;
+    margin:00px 30px 0px 30px;
+}
+#totalSpanRs{
+    padding-right:100px;
+    font-display: bold;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: large;
+}
+button{
+    width:87%;
+    margin: 20px 0px 20px 30px;
+    height:60px;
+    background-color: #ff3399;
+    color: white;
+    border:none;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: larger;
+}h3{
+    background-color: #f2f2f2;
+    margin: 0px 30px -40px 30px;
+    font-display: bold;
+}
+button+button{
+    background-color: white;
+    border: solid black 2px;
+    font-size: larger;
+    font-display: bold;
+    color: black;
+    margin-top: 0px;
+}
+button:hover{
+    cursor: pointer;
+}
+button+button:hover{
+    cursor: pointer;
+}
+button+img{
+    width:87%;
+    margin-left: 30px;
+}
+
+#productData>div>img{
+    width:150px;
+    height:150px;
+}
+#productData>div{
+    margin: 50px;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+#productData>div>h4+p:hover{
+    cursor: pointer;
+    color: #ff3399;
+}
+#productData>div>p,h4,h5{
+    margin-left: 50px;
+}
+#productData>div>h4+p{
+   padding-bottom: 20px;
+}
