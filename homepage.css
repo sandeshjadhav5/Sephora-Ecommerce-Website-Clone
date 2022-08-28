@@ -11,6 +11,20 @@
 #navbar>img{
     width:30px;
 }
+#navbarStickyOne{
+    display: grid;
+    grid-template-columns: repeat(7,1fr);
+    margin-top: 100px;
+    margin-left:80px;
+    font-size: larger;
+}
+#navbarStickyOne>div:hover{
+color: #ff4da6;
+cursor: pointer;
+}
+hr{
+    width:90%;
+}
 #webicon{
     height: 30px;
     width:50px;
@@ -51,6 +65,9 @@ h1{
     margin-top: 20px;
     font-size: 50px;
 }
+h1:hover{
+cursor: pointer;
+}
 #slider{
     overflow: hidden;
 }
@@ -58,8 +75,8 @@ h1{
     position: relative;
     width:720%;
     margin-left:-45px;
-    animation: 10s slider infinite;
-    margin-top: 100px;
+    animation: 15s slider infinite;
+    margin-top: 20px;
 }
 #slider figure img {
     width: 14.28%;
@@ -127,6 +144,11 @@ h2{
 }
 .hundred1{
     width:100%;
+}
+.hundred1:hover{
+    cursor: pointer;
+    width:90%;
+    margin-left: 20px;
 }
 .LatoFont{
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;

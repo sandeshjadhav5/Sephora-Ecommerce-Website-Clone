@@ -1,3 +1,6 @@
+#home:hover{
+    cursor: pointer;
+}
 #top{
     display: flex;
     justify-content: space-between;

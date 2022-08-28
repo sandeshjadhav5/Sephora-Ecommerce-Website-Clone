@@ -9,7 +9,7 @@
 </head>
 <body>
     <div id="top">
-        <P>S E P H O R A</P>
+        <P id="home">S E P H O R A</P>
         <p>Sandesh</p>
     </div>
     <div id="myBag"><h2>MY BAG (<span id="bagCount">0</span>)</h2></div>
@@ -56,9 +56,9 @@
 
         bagCount++;
         subTotalCart+=Number(elem.price);
-        document.querySelector("#totalCartAmount").innerText=subTotalCart
+        document.querySelector("#totalCartAmount").innerText="Rs"+" "+subTotalCart
          document.querySelector("#bagCount").innerText=bagCount;
-         document.querySelector("#totalSpanRs").innerText=subTotalCart;
+         document.querySelector("#totalSpanRs").innerText="Rs"+" "+subTotalCart;
         let pDiv=document.createElement("div");
 
 
@@ -83,13 +83,17 @@
             document.querySelector("#bagCount").innerText=bagCount;
             subTotalCart= subTotalCart-Number(elem.price);
         document.querySelector("#totalCartAmount").innerText=subTotalCart
-        document.querySelector("#totalSpanRs").innerText=subTotalCart;
+        document.querySelector("#totalSpanRs").innerText="Rs"+" "+subTotalCart;
          })
 
      
          pDiv.append(pImg,pName,pPrice,pRemove);
          document.querySelector("#productData").append(pDiv)
         
+    })
+
+    document.querySelector("#home").addEventListener("click",function(){
+        window.location.href="homelogIN.html"
     })
     
 </script>

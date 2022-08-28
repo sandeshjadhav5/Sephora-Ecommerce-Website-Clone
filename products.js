@@ -2,8 +2,9 @@
     window.addEventListener("scroll",function(){
         let header=document.querySelector("header");
         header.classList.toggle("sticky",window.scrollY > 0)
-    }) 
+    });
 let cartArr=JSON.parse(localStorage.getItem("productDetails")) || [];
+
     let SephoraCartData = [
     {
       image_url:
@@ -258,31 +259,89 @@ let cartArr=JSON.parse(localStorage.getItem("productDetails")) || [];
       strikedoffprice: 1799,
     },
   ];
-
-  SephoraCartData.map(function(elem){
-
-    let box=document.createElement("div");
-
-    let prodImg=document.createElement("img");
-    prodImg.setAttribute("src",elem.image_url);
+  displayArr(cartArr);
 
 
-    let prodName=document.createElement("p");
-    prodName.innerText=elem.name;
+  document.querySelector("#selectView").addEventListener("change",sortFn);
 
-    let prodPrice=document.createElement("h5");
-    prodPrice.innerText="Rs"+" "+elem.price;
+  function sortFn(){
+    let selected=document.querySelector("#selectView").value;
+    console.log(selected);
+    
+    if(selected=="lowToHigh"){
+      SephoraCartData.sort(function (a,b){
+        if(a.price > b.price) return 1;
+        console.log(a.price)
+        if(a.price < b.price) return -1;
+        return 0;
+      })
+      displayArr(SephoraCartData)
+    };
+    if (selected=="highToLow"){
+      SephoraCartData.sort(function (a,b){
+        if(a.price<b.price) return 1;
+        if(a.price>b.price) return -1;
+        return 0;
+      })
+      displayArr(SephoraCartData)
+    }
+    if(selected=="AtoZ"){
+      SephoraCartData.sort(function (a,b){
+        if(a.name > b.name) return 1;
+        console.log(a.price)
+        if(a.name < b.name) return -1;
+        return 0;
+      })
+      displayArr(SephoraCartData)
+    };
 
-    let prodDesc=document.createElement("p");
-    prodDesc.innerText="Receive a body polisher worth Rs1175 on purchase of 4999 and above";
+    if(selected=="ZtoA"){
+      SephoraCartData.sort(function (a,b){
+        if(a.name < b.name) return 1;
+        console.log(a.price)
+        if(a.name > b.name) return -1;
+        return 0;
+      })
+      displayArr(SephoraCartData)
+    };
 
-    let addToCart=document.createElement("button");
-    addToCart.innerText="Add to Cart";
-    addToCart.addEventListener("click",function(){
-        cartArr.push(elem);
-        localStorage.setItem("productDetails",JSON.stringify(cartArr))
+  }
+
+  function displayArr(cartArr){
+    document.querySelector("#productsGrid").innerHTML=""
+    
+    SephoraCartData.map(function(elem){
+
+      let box=document.createElement("div");
+  
+      let prodImg=document.createElement("img");
+      prodImg.setAttribute("src",elem.image_url);
+  
+  
+      let prodName=document.createElement("p");
+      prodName.innerText=elem.name;
+  
+      let prodPrice=document.createElement("h5");
+      prodPrice.innerText="Rs"+" "+elem.price;
+  
+      let prodDesc=document.createElement("p");
+      prodDesc.innerText="Receive a body polisher worth Rs1175 on purchase of 4999 and above";
+  
+      let addToCart=document.createElement("button");
+      addToCart.innerText="Add to Cart";
+      addToCart.addEventListener("click",function(){
+          cartArr.push(elem);
+          localStorage.setItem("productDetails",JSON.stringify(cartArr))
+      })
+  
+      box.append(prodImg,prodName,prodPrice,prodPrice,prodDesc,addToCart);
+      document.querySelector("#productsGrid").append(box)
     })
+  }
+   
+  
+  
 
-    box.append(prodImg,prodName,prodPrice,prodPrice,prodDesc,addToCart);
-    document.querySelector("#productsGrid").append(box)
-  })
+  
+
+  
